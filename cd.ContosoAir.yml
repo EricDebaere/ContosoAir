@@ -35,16 +35,6 @@ steps:
     resourceGroupName: 'rg-lod'
     location: 'France Central'
     templateLocation: 'Linked artifact'
-    deploymentMode: 'Incremental'
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Azure Connection'
-    subscriptionId: 'e9feff4c-8303-4123-9e7f-a8e21d3bb1c3'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'rg-lod'
-    location: 'France Central'
-    templateLocation: 'Linked artifact'
     csmFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.json'
     csmParametersFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.parameters.json'
     overrideParameters: '-p_environment $(web_environment) -p_site_prefix $(web_prefix) -p_site_web_name $(web_site)'
